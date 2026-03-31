@@ -48,7 +48,7 @@ function NavDropdown({ label, items }: NavDropdownProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className="block px-4 py-2.5 text-sm text-white/90 transition-colors hover:bg-white/10"
+                className="mx-2 block rounded-lg px-3 py-2.5 text-sm text-white/90 transition-colors hover:bg-white/10"
               >
                 {item.label}
               </a>
@@ -73,7 +73,7 @@ const earnItems: DropdownItem[] = [
 
 export default function Header() {
   return (
-    <header className="relative z-50 mx-auto flex w-full max-w-[1440px] items-center px-3 py-3">
+    <header className="relative z-50 mx-auto hidden w-full max-w-[1440px] items-center px-3 py-3 md:flex">
       <div className="flex flex-1 items-center justify-between rounded-xl bg-[rgba(14,18,42,0.7)] px-6 py-3 backdrop-blur-[10px]">
         {/* Logo */}
         <div className="flex items-center gap-[3.2px]">

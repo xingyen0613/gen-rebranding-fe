@@ -20,48 +20,47 @@ function ProductCard({
   rippleImage,
 }: ProductCardProps) {
   return (
-    <div className="relative flex min-w-[320px] flex-1 flex-col justify-between overflow-hidden rounded-[24px] bg-brand-primary px-6 py-6 max-w-full" style={{ height: 464 }}>
+    <div className="relative flex min-h-[320px] w-full flex-1 flex-col justify-between overflow-hidden rounded-[24px] bg-brand-primary px-5 py-5 md:min-w-[280px] lg:px-6 lg:py-6 xl:min-h-[464px]">
       <Image
         src={rippleImage}
         alt=""
         width={800}
         height={400}
+        unoptimized
         className="pointer-events-none absolute bottom-0 left-0 max-w-none opacity-60"
         aria-hidden
       />
 
       {/* Top */}
-      <div className="relative z-10 flex flex-col gap-3">
+      <div className="relative z-10 flex flex-col gap-2 lg:gap-3">
         {/* Badge */}
-        <div className="flex w-fit items-center gap-3 rounded-full bg-white/10 px-3 py-1.5">
-          <span className="text-sm">
-            {"★".repeat(riskStars)}
-          </span>
-          <span className="text-xl font-medium">
-            <span className="text-text-on-brand-secondary">{riskLevel}</span>{" "}
+        <div className="flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 lg:gap-3">
+          <span className="text-sm">{"★".repeat(riskStars)}</span>
+          <span className="text-base font-medium lg:text-xl">
+            <span className="text-[#e1e5eb]">{riskLevel}</span>{" "}
             <span className="text-white/60">Risk</span>
           </span>
         </div>
 
         {/* Title & desc */}
-        <h3 className="font-bold text-[28px] leading-[32px] tracking-[2px] text-white">
+        <h3 className="text-xl font-bold leading-[28px] tracking-[2px] text-white lg:text-[28px] lg:leading-[32px]">
           {title}
         </h3>
-        <p className="text-[28px] font-medium leading-[36px] text-text-on-brand-secondary">
+        <p className="text-base font-medium leading-[24px] text-[#e1e5eb] lg:text-[28px] lg:leading-[36px]">
           {description}
         </p>
       </div>
 
       {/* Bottom */}
-      <div className="relative z-10 flex flex-col gap-2">
-        <p className="text-xl font-semibold text-text-on-brand-secondary">
+      <div className="relative z-10 mt-6 flex flex-col gap-2 lg:mt-0">
+        <p className="text-base font-semibold text-[#e1e5eb] lg:text-xl">
           {yieldLabel}
         </p>
         <div className="flex flex-wrap gap-2">
           {yieldTags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-white/20 px-3 py-1.5 text-xl font-medium text-white"
+              className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium text-white lg:py-1.5 lg:text-xl"
             >
               {tag}
             </span>
@@ -74,12 +73,12 @@ function ProductCard({
 
 export default function ProductSection() {
   return (
-    <section className="flex flex-col items-center gap-12 px-6 py-36">
-      <h2 className="text-center text-[52px] font-semibold leading-[56px] text-white">
+    <section className="flex flex-col items-center gap-8 px-4 py-16 md:px-6 lg:gap-12 lg:py-36">
+      <h2 className="text-center text-[28px] font-semibold leading-[32px] text-white md:text-[40px] md:leading-[44px] xl:text-[52px] xl:leading-[56px]">
         Earn Across Multiple Strategies
       </h2>
 
-      <div className="flex w-full flex-wrap justify-center gap-3">
+      <div className="flex w-full flex-col gap-3 md:flex-row md:flex-wrap md:justify-center">
         <ProductCard
           riskLevel="Low"
           riskStars={1}

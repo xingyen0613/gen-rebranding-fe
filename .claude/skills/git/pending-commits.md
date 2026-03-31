@@ -1,0 +1,1 @@
+- [11:47] 實作全站 RWD 支援並新增 mobile header、社群 icon 與 footer logo 素材
